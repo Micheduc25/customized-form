@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import StatusView from "../views/StatusView.vue";
 
 import { useRoutesStore } from "../stores/routes";
 import { useProgressStore } from "../stores/progress";
@@ -11,7 +12,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView,
+      component: StatusView,
     },
     {
       path: "/status",
