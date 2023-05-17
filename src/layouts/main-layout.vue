@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from "vue";
 import { useProgressStore } from "../stores/progress";
 import { useRoutesStore } from "../stores/routes";
 
@@ -16,13 +17,16 @@ const props = defineProps({
     default: "image_1.jpg",
   },
 });
+
+const imageUrl = new URL(`../assets/images/${props.image}`, import.meta.url)
+  .href;
 </script>
 
 <template>
   <section class="flex bg-[#f6faf8]">
     <aside class="w-1/3 flex-shrink-0">
       <img
-        :src="`/src/assets/images/${image}`"
+        :src="imageUrl"
         style="height: calc(100vh - 94px); position: sticky; top: 94px"
         alt="side-image"
       />
